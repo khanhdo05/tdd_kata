@@ -14,6 +14,7 @@ class StringCalculator():
         
         # Iterate through the list, convert char -> int, and add up to the sum
         for char in list_of_char:
-            result += int(char)
+            if char:
+                result += int(char)
 
         return result
