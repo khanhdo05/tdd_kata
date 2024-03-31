@@ -69,5 +69,8 @@ def test_multiple_negatives_throws_exception_and_list_of_negatives():
 
 # Step 6: Numbers bigger than 1000 should be ignored, so adding 2 + 1001 = 2  
 
-def test_1000_comma_2_gets_2():
-    assert StringCalculator.Add("1000,2") == 2
+def test_1001_comma_2_gets_2():
+    assert StringCalculator.Add("1001,2") == 2
+
+def test_4100_gets_0():
+    assert StringCalculator.Add("4100") == 0

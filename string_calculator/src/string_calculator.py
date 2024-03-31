@@ -22,7 +22,7 @@ class StringCalculator():
                 
                 if num < 0:
                     negatives.append(num)
-                if num < 1000:
+                if num <= 1000:
                     result += num
                 
         if len(negatives) == 1:
