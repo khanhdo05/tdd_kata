@@ -36,3 +36,7 @@ def test_3_comma_17_newline_12_gets_32():
 
 def test_3_c_11_gets_14():
     assert StringCalculator.Add("//c\n3c11") == 14
+
+def test_3_semicolon_17_newline_12_comma_2():
+    assert StringCalculator.Add("//;\n3;17\n12,2") == 34
+    
