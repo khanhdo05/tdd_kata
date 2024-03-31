@@ -27,3 +27,6 @@ def test_larger_input_gets_correct_sum():
 
 def test_5_newline_11_gets_16():
     assert StringCalculator.Add("5\n11") == 16
+
+def test_3_comma_17_newline_12_gets_32():
+    assert StringCalculator.Add("3,17\n12") == 32
