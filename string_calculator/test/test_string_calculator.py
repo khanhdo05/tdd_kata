@@ -89,3 +89,8 @@ def test_delimiter_length_5_multiple_characters_gets_correct_sum():
 
 def test_delimiters_are_star_and_percent_separating_1_2_3_gets_6():
     assert StringCalculator.Add("//[*][%]\n1*2%3") == 6
+
+# Step 9: Allow multiple delimiters length larger than 1
+
+def test_delimiters_are_three_stars_and_4_s_separating_1_2_3_gets_6():
+    assert StringCalculator.Add("//[***][ssss]\n1***2ssss3") == 6
