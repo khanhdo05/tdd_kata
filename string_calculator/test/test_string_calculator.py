@@ -74,3 +74,18 @@ def test_1001_comma_2_gets_2():
 
 def test_4100_gets_0():
     assert StringCalculator.Add("4100") == 0
+
+# Step 7: Delimiters can be of any length with the following format: “//[delimiter]\n”
+
+def test_delimiter_length_3_gets_correct_sum():
+    assert StringCalculator.Add("//[***]\n1***2***3") == 6
+    
+def test_delimiter_length_5_multiple_characters_gets_correct_sum():
+    assert StringCalculator.Add("//[*a*!*]\n1*a*!*2*a*!*3\n1000;1001") == 1006
+
+# What if we specify delimiter as "-"
+
+# Step 8: Allow multiple delimiters like this: “//[delim1][delim2]\n”
+
+def test_delimiters_are_star_and_percent_separating_1_2_3_gets_6():
+    assert StringCalculator.Add("//[*][%]\n1*2%3") == 6
