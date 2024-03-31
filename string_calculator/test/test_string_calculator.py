@@ -21,3 +21,9 @@ def test_1_2_3_gets_6():
 
 def test_larger_input_gets_correct_sum():
     assert StringCalculator.Add("1,2,3,9,3,4,2,4,3,3") == 34
+
+# Batch 3: Allow the Add method to handle new lines between numbers (instead of commas)
+# Delimiter: , \n
+
+def test_5_newline_11_gets_16():
+    assert StringCalculator.Add("5\n11") == 16
