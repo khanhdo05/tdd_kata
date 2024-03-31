@@ -54,3 +54,9 @@ def test_negative_1_throws_exception_and_negative_1():
         StringCalculator.Add("-1")
         
     assert "negatives: -1 not allowed" in str(excinfo.value)
+
+def test_12_semicolon_negative_1_throws_exception_and_negative_1():
+    with pytest.raises(ValueError) as excinfo:
+        StringCalculator.Add("//;\n12;-1")
+        
+    assert "negatives: -1 not allowed" in str(excinfo.value)   
