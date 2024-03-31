@@ -65,4 +65,9 @@ def test_multiple_negatives_throws_exception_and_list_of_negatives():
     with pytest.raises(ValueError) as excinfo:
         StringCalculator.Add("//;\n12;-1\n4,-3,-7")
         
-    assert "negatives: -1, -3, -7 not allowed" in str(excinfo.value)     
+    assert "negatives: -1, -3, -7 not allowed" in str(excinfo.value)   
+
+# Step 6: Numbers bigger than 1000 should be ignored, so adding 2 + 1001 = 2  
+
+def test_1000_comma_2_gets_2():
+    assert StringCalculator.Add("1000,2") == 2

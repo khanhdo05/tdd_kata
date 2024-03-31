@@ -22,8 +22,8 @@ class StringCalculator():
                 
                 if num < 0:
                     negatives.append(num)
-                
-                result += num
+                if num < 1000:
+                    result += num
                 
         if len(negatives) == 1:
             raise ValueError(f"negative: {negatives[0]} not allowed")
