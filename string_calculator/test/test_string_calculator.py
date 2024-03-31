@@ -43,8 +43,14 @@ def test_3_semicolon_17_newline_12_comma_2():
 # Step 5: Calling Add with a negative number will throw an exception “negatives not allowed” - and the negative that was passed. If there are multiple negatives, show all of them in the exception message.
 # Delimiter: , \n //[delimiter]\n[numbers…]
 
-def test_3_comma_negative_11_throw_exception_and_negative_11():
+def test_3_comma_negative_11_throws_exception_and_negative_11():
     with pytest.raises(ValueError) as excinfo:
         StringCalculator.Add("3,-11") 
 
     assert "negatives: -11 not allowed" in str(excinfo.value)
+
+def test_negative_1_throws_exception_and_negative_1():
+    with pytest.raises(ValueError) as excinfo:
+        StringCalculator.Add("-1")
+        
+    assert "negatives: -1 not allowed" in str(excinfo.value)
