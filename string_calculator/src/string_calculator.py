@@ -12,14 +12,22 @@ class StringCalculator():
         # Split the string into a list of characters by comma as the delimiter
         list_of_char = string_with_only_commas_as_delimiter.split(",")
         
+        # Initiate an empty list to store negatives
+        negatives = []
+        
         # Iterate through the list, skip over empty string, convert str -> int, and add up to the sum
         for char in list_of_char:
             if char:
                 num = int(char)
                 
                 if num < 0:
-                    raise ValueError(f"negatives: {num} not allowed")
+                    negatives.append(num)
                 
                 result += num
-
+                
+        if len(negatives) == 1:
+            raise ValueError(f"negative: {negatives[0]} not allowed")
+        elif negatives:
+            raise ValueError(f"negatives: {', '.join([str(num) for num in negatives])} not allowed")
+        
         return result

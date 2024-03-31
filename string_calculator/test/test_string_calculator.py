@@ -47,16 +47,22 @@ def test_3_comma_negative_11_throws_exception_and_negative_11():
     with pytest.raises(ValueError) as excinfo:
         StringCalculator.Add("3,-11") 
 
-    assert "negatives: -11 not allowed" in str(excinfo.value)
+    assert "negative: -11 not allowed" in str(excinfo.value)
 
 def test_negative_1_throws_exception_and_negative_1():
     with pytest.raises(ValueError) as excinfo:
         StringCalculator.Add("-1")
         
-    assert "negatives: -1 not allowed" in str(excinfo.value)
+    assert "negative: -1 not allowed" in str(excinfo.value)
 
 def test_12_semicolon_negative_1_throws_exception_and_negative_1():
     with pytest.raises(ValueError) as excinfo:
         StringCalculator.Add("//;\n12;-1")
         
-    assert "negatives: -1 not allowed" in str(excinfo.value)   
+    assert "negative: -1 not allowed" in str(excinfo.value)   
+
+def test_multiple_negatives_throws_exception_and_list_of_negatives():
+    with pytest.raises(ValueError) as excinfo:
+        StringCalculator.Add("//;\n12;-1\n4,-3,-7")
+        
+    assert "negatives: -1, -3, -7 not allowed" in str(excinfo.value)     
